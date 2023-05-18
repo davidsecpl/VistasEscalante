@@ -1,11 +1,20 @@
 import React from "react";
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 
-const Login = ()=>{
+const Login = ({navigation})=>{
     return (
         <View style={styles.container}>
-            <Text>Login</Text>
+            <Text style={styles.header}>Login</Text>
+            {/* <TouchableOpacity onPress={()=>{}}>
+                <Text>Ingresar</Text>
+            </TouchableOpacity> */}
+            <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('RecoveryPassword')}}>
+                <Text style={styles.textButton}>Olvide mi contraseña</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Register')}}>
+                <Text style={styles.textButton}>Registrarme</Text>
+            </TouchableOpacity>
         </View>
     );
 };
